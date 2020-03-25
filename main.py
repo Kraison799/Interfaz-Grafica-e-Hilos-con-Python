@@ -5,7 +5,11 @@
 #          Área Académica de Ing. en Computadores        #
 #                                                        #
 #      Taller de Interfaz Gráfica e Hilos con Python     #
-#   Tallerista: Víctor I. Castrillo Muñoz - 2017110244   #
+#                                                        #
+#                       Tallerista:                      #
+#          Víctor I. Castrillo Muñoz - 2017110244        #
+#                      Colaboración:                     #
+#            Daniela Brenes Otárola - 2019042386         #
 #                                                        #
 #            IntegraTEC - Ing. en Computadores           #
 #                                                        #
@@ -19,7 +23,6 @@ import time
 from threading import Thread
 
 # COLOR RGB VALUES #
-
 bubbleGum = "#FFBED2"
 magicMint = "#B5EAD7"
 frenchSkyBlue = "#82B3FF"
