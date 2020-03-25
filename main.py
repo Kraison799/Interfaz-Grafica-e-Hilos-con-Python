@@ -1,15 +1,15 @@
 """
-##################################################################
-
-Instituto Tecnológico de Costa Rica
-Área Académica de Ing. en Computadores
-
-Taller de Interfaz Gráfica con Tkinter
-Tallerista: Víctor I. Castrillo Muñoz - 2017110244
-
-Main file
-
-##################################################################
+##########################################################
+#                                                        #      
+#            Instituto Tecnológico de Costa Rica         #
+#          Área Académica de Ing. en Computadores        #
+#                                                        #
+#      Taller de Interfaz Gráfica e Hilos con Python     #
+#   Tallerista: Víctor I. Castrillo Muñoz - 2017110244   #
+#                                                        #
+#            IntegraTEC - Ing. en Computadores           #
+#                                                        #
+##########################################################
 """
 
 # LIBRARIES #
@@ -33,7 +33,7 @@ colors = [magicMint, frenchSkyBlue, lightYellow, lightSalmonPink, lightPastelPur
 
 # BOUNCING BALL CLASS #
 class BouncingBall:
-    def __init__(self, canvas):  # BouncingBall class constructor
+    def __init__(self, canvas):                                 # BouncingBall class constructor
         self.canvas = canvas
         self.x = 0
         self.y = random.randint(0, 200)
@@ -43,23 +43,24 @@ class BouncingBall:
         self.top_y = self.y + 100
         self.oval = canvas.create_oval(self.x, self.y, self.x + 2*self.r, self.y + 2*self.r, fill=random.choice(colors))
 
-    def move(self):            # Move method of the BouncingBall class
+    def move(self):                                             # Move method of the BouncingBall class
         while self.x < 525:
             # Bouncing effect
-            if self.y >= 446 - self.r*2 and self.falling:
+            if self.y >= 446 - self.r*2 and self.falling:       # When the ball touch the bottom
                 self.falling = False
-            elif self.y <= self.top_y and not self.falling:
+            elif self.y <= self.top_y and not self.falling:     # When the ball touch the top limit
                 self.falling = True
                 self.top_y = self.y+100
 
             # Movement
-            if self.falling:
+            if self.falling:                                    # Move up/down 
                 self.y += self.r
                 self.canvas.move(self.oval, self.speed, self.r)
             else:
                 self.y -= self.r
                 self.canvas.move(self.oval, self.speed, -self.r)
-            self.x += self.speed
+                
+            self.x += self.speed                                # Move forward
 
             time.sleep(0.05)
 
